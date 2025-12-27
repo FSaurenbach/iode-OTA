@@ -1,10 +1,10 @@
 ---
 layout: default
-title: LineageOS builds by Exynoobs
+title: iodéOS builds by FSRB
 ---
 
 # Supported devices
-
+## This is forked from @Linux4 and @Exynoobs! Thank you for this!
 {% assign sorted_pages = site.pages | sort: 'title' %}
 
 {% for page in sorted_pages %}

@@ -1,3 +1,2 @@
 theme: jekyll-theme-cayman
-baseurl: /OTA
-lineage_ota_base_url: https://raw.githubusercontent.com/Exynoobs/OTA/master/
+lineage_ota_base_url: https://raw.githubusercontent.com/fsaurenbach/iode-OTA/master/

@@ -10,9 +10,9 @@ FILENAME=$(basename $ZIP)
 BUILDDIR=$(dirname $ZIP)
 SCRIPTDIR=$(dirname $0)
 REPODIR=$(dirname $SCRIPTDIR)
-DEVICE=$(echo $FILENAME | cut -f5 -d '-' | cut -f1 -d '.')
+DEVICE=$(echo $FILENAME | cut -f4 -d '-' | cut -f1 -d '.')
 DATE=$(echo $FILENAME | cut -f3 -d '-')
-RECOVERY_NAME=$(echo $FILENAME | sed 's/UNOFFICIAL/recovery/g' | sed 's/\.zip/.img/g')
+RECOVERY_NAME=$(echo $FILENAME | sed 's/\.zip/.img/')
 RELEASENAME="$DEVICE-$DATE"
 
 $SCRIPTDIR/otainfo.sh $ZIP $(hub -C $REPODIR browse -u) $RELEASENAME > $REPODIR/../$DEVICE.json
@@ -28,7 +28,7 @@ fi
 git -C $REPODIR add ../$DEVICE.json
 git -C $REPODIR commit -m "OTA: $DEVICE: $DATE"
 git -C $REPODIR tag "$RELEASENAME"
-git -C $REPODIR push origin HEAD:staging --tags
+git -C $REPODIR push origin HEAD:staging --tags --force
 
 hub -C $REPODIR release create \
     -a $BUILDDIR/$RECOVERY_NAME \
@@ -40,8 +40,8 @@ hub -C $REPODIR release create \
     -t $(git -C $REPODIR rev-parse HEAD) \
     $RELEASENAME
 
-git -C $REPODIR push origin HEAD:master --tags
-git -C $REPODIR push origin --delete staging
+git -C $REPODIR push origin HEAD:master --tags  --force
+git -C $REPODIR push origin --delete staging --force
 
 rm $REPODIR/$FILENAME.sha256 $REPODIR/$RECOVERY_NAME.sha256 $BUILDDIR/$RECOVERY_NAME
 if [ "$DEVICE" = "dm1q" ]; then

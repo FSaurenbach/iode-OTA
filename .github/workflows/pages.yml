@@ -43,4 +43,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./_site
-          cname: exynoobs.github.io/OTA/
+          cname: ota.fsrb.de
