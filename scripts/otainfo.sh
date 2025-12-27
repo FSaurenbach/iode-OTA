@@ -20,7 +20,7 @@ DATE=$(echo $FILENAME | cut -f3 -d '-')
 ID=$(echo ${TIMESTAMP}${DEVICE}${SDK_LEVEL} | sha256sum | cut -f 1 -d ' ')
 SIZE=$(du -b $ZIP | cut -f1 -d '	')
 TYPE="UNOFFICIAL"
-VERSION=$(echo $FILENAME | cut -f2 -d '-')
+VERSION=$(echo $FILENAME | cut -f2 -d '-').1
 
 URL="$REPOURL/releases/download/${RELEASENAME}/${FILENAME}"
 
