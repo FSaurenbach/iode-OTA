@@ -1,13 +1,13 @@
 {
   "response": [
     {
-      "datetime": "1767083634",
-      "filename": "iode-7.1-20251230-dm1q.zip",
-      "id": "fa698db330f4db17a8afbdff9452999db42a0a3fe197464fb42c247c5444dab9",
-      "romtype": "UNOFFICIAL",
-      "size": "2003782376",
-      "url": "https://github.com/FSaurenbach/iode-OTA/releases/download/dm1q-20251230/iode-7.1-20251230-dm1q.zip",
-      "version": "7.1.1"
+      "datetime": "1767348798",
+      "filename": "voltage-5.3-dm1q-20260102-1015-UNOFFICIAL.zip",
+      "id": "dcb7ca7360b56d8b5a7fed72bdec1c38404899710f902e15dcafc12bc99fb1f2",
+      "romtype": "20260102",
+      "size": "1978623774",
+      "url": "https://github.com/FSaurenbach/VoltageOTA/releases/download/dm1q-1015/voltage-5.3-dm1q-20260102-1015-UNOFFICIAL.zip",
+      "version": "5.3.1"
     }
   ]
 }
